@@ -57,7 +57,7 @@ export default function SearchResult(props) {
                     <p className="font-light"><span className="font-medium mr-2">Vol</span>£{numeral(props.cryptoVolume).format('0a')}</p>
                 </div>
                 {user[0] && 
-                <div className="my-auto mr-3 ml-6 sm:ml-0">
+                <div className="my-auto sm:mr-3 ml-6 sm:ml-0">
                     <button onClick={handleCoinSave}>
                         <i aria-hidden className="fas fa-star text-xl text-yellow-500 hover:text-yellow-600"></i>
                     </button>

@@ -54,7 +54,7 @@ export default function SavedCoin(props) {
                     <p className="font-light"><span className="font-medium mr-2">MC</span>£{numeral(props.cryptoMarketcap).format('0a')}</p>
                     <p className="font-light"><span className="font-medium mr-2">Vol</span>£{numeral(props.cryptoVolume).format('0a')}</p>
                 </div>
-                <div className="my-auto mr-3 text-gray-700">
+                <div className="my-auto sm:mr-3 ml-6 sm:ml-0">
                     <button onClick={handleDelete} className="block mx-auto">
                         {isLoading ? <i aria-hidden className="fas fa-spinner animate-spin"></i> : <i aria-hidden className="fas fa-trash"></i>}
                     </button>

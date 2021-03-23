@@ -36,7 +36,6 @@ export default function CoinsList() {
         if (searchIDs.length !== 0) {
             axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&ids=${searchIDs}`)
             .then(res => {
-                console.log(res.data)
                 const coinsArr = res.data;
                 setCoins(coinsArr);
             }) 

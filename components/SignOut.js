@@ -7,7 +7,7 @@ export default function SignOut() {
 
     return (
         <div>
-            <button className="float-right" onClick={handleSignOut}>Sign out</button>
+            <button className="float-right" onClick={handleSignOut}>Sign out<i aria-hidden className="fas fa-sign-out-alt ml-2"></i></button>
         </div>
     )
 }
