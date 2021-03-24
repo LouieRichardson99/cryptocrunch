@@ -65,7 +65,7 @@ export default function NewTransaction() {
                         type="text" 
                         name="name"
                         placeholder="Bitcoin?" 
-                        required>
+                        >
                     </input>
                 </label>
                 <label className="block mt-3">
@@ -77,7 +77,7 @@ export default function NewTransaction() {
                         type="number" 
                         name="price" 
                         placeholder="5000"
-                        required>
+                        >
                     </input>
                 </label>
                 <label className="block mt-3">
@@ -89,11 +89,11 @@ export default function NewTransaction() {
                         type="number" 
                         name="quantity" 
                         placeholder="3"
-                        required>
+                        >
                     </input>
                 </label>
                 <p className="mt-3">What type of transaction is it?</p>
-                <select className="w-full mt-2" name="type" value={transaction.type} onChange={handleChange} required>
+                <select className="w-full mt-2" name="type" value={transaction.type} onChange={handleChange}>
                     <option value="buy">Buy</option>
                     <option value="sell">Sell</option>
                 </select>
@@ -106,7 +106,7 @@ export default function NewTransaction() {
                         type="date" 
                         name="date" 
                         placeholder="dd/mm/yyyy"
-                        required>
+                        >
                     </input>
                 </label>
                 <button className="p-2 bg-gray-800 text-white w-full mt-3" type="submit">Add Transaction</button>
