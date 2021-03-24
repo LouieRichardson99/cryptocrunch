@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.loginRegisterInput {
+    @apply p-2 rounded-md bg-gray-100 border-darkGray block mb-2 mx-auto w-80 font-light text-gray-800
+}
+
+.loginRegisterSubmit {
+    @apply rounded-md bg-darkerGray text-white p-2 block mx-auto w-80 font-light
+}

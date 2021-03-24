@@ -44,7 +44,7 @@ export default function CoinsList() {
 
     return (
         <div>
-            {coins && <p className="text-center text-gray-100 text-xl sm:mt-10 mb-4">My Coins<i aria-hidden className="fas fa-coins ml-3 text-lightBlue"></i></p>}
+            {coins && <p className="text-center text-gray-100 text-xl mt-10 mb-4">My Coins<i aria-hidden className="fas fa-coins ml-3 text-lightBlue"></i></p>}
             {coins && coins.map(coin => {
                 return <SavedCoin
                     key={coin.id}

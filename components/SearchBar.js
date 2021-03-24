@@ -38,7 +38,7 @@ export default function SearchBar() {
 
     return (
         <div>
-            <form onSubmit={handleCoinSearch} className="mx-auto flex justify-center mt-5">
+            <form onSubmit={handleCoinSearch} className="mx-auto flex justify-center mt-4 sm:mt-5">
                 <input className=" bg-darkGray p-2 rounded-sm pl-3 w-64 text-md border-none placeholder-gray-400 border text-white" required value={searchValue} onChange={handleCoinName} type="text" placeholder="Search for a coin, e.g. 'Bitcoin'" />
                 <button className="p-2 rounded-sm ml-1" type="submit"><i aria-hidden className="fas fa-search mr-2 text-lightBlue"></i></button>
             </form>
