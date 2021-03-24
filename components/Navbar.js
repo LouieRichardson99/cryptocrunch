@@ -28,20 +28,30 @@ export default function Navbar() {
     }
 
     return (
-        <div className="flex justify-between p-5 bg-gray-100">
-            <a className="flex my-auto text-xl" href='/'><h1>CryptoCrunch</h1></a>
-            {user[0] ? 
-                <div>
-                    <p>{user[0].email}</p>
-                    <SignOut />
-                </div> : 
-                <div>
-                    <button className="mr-6" onClick={handleLoginForm}>Sign in</button>
-                    <button onClick={handleRegisterForm}>Register</button>
+        <nav className="navbar navbar-expand-sm navbar-light bg-light px-2">
+            <div className="container-fluid">
+                <a className="navbar-brand" href="/">CryptoCrunch</a>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse sm-navbar:justify-end" id="navbarNav">
+                <div className="navbar-nav">
+                    {user[0] ? 
+                        <div>
+                            <p className="text-center mt-2 sm-navbar:mt-0 sm-navbar:mb-0 mb-1">{user[0].email}</p>
+                            <SignOut />
+                        </div> : 
+                            <div className="sm-navbar:flex text-center my-2">
+                                <button className="mr-6" onClick={handleLoginForm}>Sign in</button>
+                                <button onClick={handleRegisterForm}>Register</button>
+                            </div>
+                    }   
+                    {loginFormOpen && <LoginForm closeForm={handleLoginFormClose}/>}
+                    {registerFormOpen && <RegisterForm closeForm={handleRegisterFormClose}/>}
                 </div>
-            }   
-            {loginFormOpen && <LoginForm closeForm={handleLoginFormClose}/>}
-            {registerFormOpen && <RegisterForm closeForm={handleRegisterFormClose}/>}
-        </div>
+                </div>
+            </div>
+        </nav>
     )
 }
+

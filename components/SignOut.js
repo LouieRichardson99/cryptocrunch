@@ -6,8 +6,8 @@ export default function SignOut() {
     }
 
     return (
-        <div>
-            <button className="float-right" onClick={handleSignOut}>Sign out<i aria-hidden className="fas fa-sign-out-alt ml-2"></i></button>
+        <div className="justify-center flex sm-navbar:block mb-2 sm-navbar:mb-0">
+            <button className="sm-navbar:float-right" onClick={handleSignOut}>Sign out<i aria-hidden className="fas fa-sign-out-alt ml-2"></i></button>
         </div>
     )
 }
