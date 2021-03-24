@@ -12,11 +12,10 @@ export default function CoinsList() {
     useEffect(() => {
         const db = firebase.firestore();
         const coinsRef = db.collection('coins');
-        let unsubscribe;
 
         if (user[0]) {
             const userUID = user[0].uid;
-            unsubscribe = coinsRef.where('uid', '==', userUID)
+            coinsRef.where('uid', '==', userUID)
                 .onSnapshot(querySnapshot => {
                     const searchIDArr = [];
                     querySnapshot.docs.map(doc => {
@@ -28,25 +27,25 @@ export default function CoinsList() {
         } else {
             setSearchIDs("")
             setCoins(null);
-            unsubscribe && unsubscribe();
         }
     }, [user, searchIDs]);
 
     useEffect(() => {
-        if (searchIDs.length !== 0) {
-            axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&ids=${searchIDs}`)
-            .then(res => {
-                const coinsArr = res.data;
-                setCoins(coinsArr);
-            }) 
-        } else {
-            setCoins(null)
+        fetchData();
+        async function fetchData() {
+            if (searchIDs.length !== 0) {
+                console.log('fetch data')
+                const { data } = await axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&ids=${searchIDs}&price_change_percentage=24h`)
+                setCoins(data);
+            } else {
+                setCoins(null)
+            }
         }
-    }, [user, searchIDs])
+    }, [searchIDs, user])
 
     return (
         <div>
-            {searchIDs && <p className="text-center my-3 text-xl sm:mt-8">My Coins<i aria-hidden className="fas fa-coins ml-3"></i></p>}
+            {coins && <p className="text-center my-3 text-xl sm:mt-8">My Coins<i aria-hidden className="fas fa-coins ml-3"></i></p>}
             {coins && coins.map(coin => {
                 return <SavedCoin
                     key={coin.id}

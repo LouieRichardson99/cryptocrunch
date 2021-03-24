@@ -6,15 +6,16 @@ export default function TopTenList() {
     const [coinData, setCoinData] = useState([]);
 
     useEffect(() => {
-        axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=10&page=1&sparkline=false')
-        .then(res => {
-          setCoinData(res.data)
-        })
+        fetchData();
+        async function fetchData() {
+            const { data } = await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=10&page=1&sparkline=false');
+            setCoinData(data);
+        };
     }, [])
 
     return (
         <div className="my-8">
-            <p className="text-xl text-center my-5">Cryptocurrency Market Top 10<i aria-hidden className="fas fa-funnel-dollar ml-3"></i></p>
+            {coinData && <p className="text-xl text-center my-5">Cryptocurrency Market Top 10<i aria-hidden className="fas fa-funnel-dollar ml-3"></i></p>}
             {coinData.map(coin => {
                 return <PriceTile
                     key={coin.name}
