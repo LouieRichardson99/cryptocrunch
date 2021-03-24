@@ -32,7 +32,7 @@ export default function SearchResult(props) {
 
     return (
         <div className="justify-center flex">
-            <div className="w-11/12 sm:w-auto sm:inline-flex flex mx-auto bg-gray-100 mb-3 mt-3 justify-center px-3 py-3 rounded-sm text-gray-800 tex">
+            <div className="w-11/12 sm:w-auto sm:inline-flex flex mx-auto bg-darkerGray text-white mb-3 mt-3 justify-center px-3 py-3 rounded-md">
                 <div className="w-12 mr-2 object-cover flex justify-center">            
                     <img
                         className="h-8 my-auto rounded-full"

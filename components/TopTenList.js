@@ -14,8 +14,8 @@ export default function TopTenList() {
     }, [])
 
     return (
-        <div className="my-8">
-            {coinData && <p className="text-xl text-center my-5">Cryptocurrency Market Top 10<i aria-hidden className="fas fa-funnel-dollar ml-3"></i></p>}
+        <div className="my-9">
+            {coinData && <p className="text-xl text-gray-100 text-center mb-4">Cryptocurrency Market Top 10<i aria-hidden className="fas fa-funnel-dollar ml-3 text-lightBlue"></i></p>}
             {coinData.map(coin => {
                 return <PriceTile
                     key={coin.name}

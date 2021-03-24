@@ -30,7 +30,7 @@ export default function SavedCoin(props) {
 
     return (
         <div className="justify-center flex">
-            <div className="bg-gray-100 my-0.5 justify-center px-2 py-2 rounded-sm inline-flex text-gray-700 w-11/12 sm:w-auto">
+            <div className="bg-darkerGray my-0.5 justify-center px-2 py-2 rounded-md inline-flex text-white w-11/12 sm:w-auto">
                 <div className="w-12 mr-2 object-cover flex justify-center">            
                     <img
                         className="h-8 my-auto rounded-full"

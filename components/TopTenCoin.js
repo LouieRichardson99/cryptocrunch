@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Percentage from "./Percentage";
 import firebase from "../firebase/initialiseFirebase";
 import { UserContext } from "../context/userContext";
@@ -6,6 +6,7 @@ import numeral from "numeral";
 
 export default function TopTenCoin(props) {
     const user = useContext(UserContext);
+    const [effect, setEffect] = useState(false);
 
     const handleCoinSave = () => {
         if (user[0]) {            
@@ -30,7 +31,7 @@ export default function TopTenCoin(props) {
 
     return (
         <div className="mt-2 flex justify-center">
-            <div className="bg-gray-100 justify-center px-3 py-3 rounded-sm inline-flex text-gray-800 w-11/12 sm:w-auto">
+            <div className="bg-darkerGray justify-center px-3 py-3 rounded-md inline-flex text-white w-11/12 sm:w-auto">
                 <div className="w-12 mr-2 object-cover flex justify-center">            
                     <img
                         className="h-8 my-auto rounded-full"
@@ -56,8 +57,13 @@ export default function TopTenCoin(props) {
                 </div>
                 {user[0] && 
                 <div className="my-auto sm:mr-3 ml-6 sm:ml-0">
-                    <button onClick={handleCoinSave}>
-                        <i aria-hidden className="fas fa-star text-xl text-yellow-500 hover:text-yellow-600"></i>
+                    <button>
+                        <i 
+                            onClick={() => {handleCoinSave(); setEffect(true)}}
+                            onAnimationEnd={() => setEffect(false)} 
+                            aria-hidden 
+                            className={`${effect && "animate-ping"} fas fa-star text-xl text-yellow-500 hover:text-yellow-600`}
+                        ></i>
                     </button>
                 </div>}
             </div>

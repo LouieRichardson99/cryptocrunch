@@ -34,7 +34,6 @@ export default function CoinsList() {
         fetchData();
         async function fetchData() {
             if (searchIDs.length !== 0) {
-                console.log('fetch data')
                 const { data } = await axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&ids=${searchIDs}&price_change_percentage=24h`)
                 setCoins(data);
             } else {
@@ -45,7 +44,7 @@ export default function CoinsList() {
 
     return (
         <div>
-            {coins && <p className="text-center my-3 text-xl sm:mt-8">My Coins<i aria-hidden className="fas fa-coins ml-3"></i></p>}
+            {coins && <p className="text-center text-gray-100 text-xl sm:mt-10 mb-4">My Coins<i aria-hidden className="fas fa-coins ml-3 text-lightBlue"></i></p>}
             {coins && coins.map(coin => {
                 return <SavedCoin
                     key={coin.id}

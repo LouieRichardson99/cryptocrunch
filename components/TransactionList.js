@@ -28,7 +28,7 @@ export default function TransactionList() {
     
     return (
         <div className="w-full md:w-96 mt-10 md:mt-0">
-            {transactions && <p className="text-xl text-center mb-5">My Transactions<i aria-hidden className="fas fa-wallet ml-3"></i></p>}
+            {transactions && <p className="text-xl text-center mb-5 text-gray-100">My Transactions<i aria-hidden className="fas fa-wallet ml-3 text-lightBlue"></i></p>}
             {transactions.length == 0 && <p className="text-center">You don't seem to have any transactions</p>}
             {transactions && transactions.map(tx => {
                 return <TransactionItem 

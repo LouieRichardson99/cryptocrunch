@@ -36,15 +36,15 @@ export default function SignIn(props) {
 
     return (
         <div className="h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50">
-            <div className="bg-gray-100 sm:w-96 p-4 rounded-md flex flex-wrap content-center justify-center">
+            <div className="bg-darkGray sm:w-96 p-4 rounded-md flex flex-wrap content-center justify-center">
                         <div>
                             <div className="flex justify-between mb-4">
-                                <p className="text-center text-xl">Sign in</p>
-                                <button onClick={handleFormClose}><i aria-hidden className="fas fa-times text-xl"></i></button>
+                                <p className="text-center text-xl text-gray-100">Sign in</p>
+                                <button onClick={handleFormClose}><i aria-hidden className="fas fa-times text-xl text-gray-100"></i></button>
                             </div>
                             <form onSubmit={handleSubmit} className="mb-3">
                                 <input
-                                    className="p-2 rounded-sm border-gray-800 block mb-2 mx-auto w-80 font-light" 
+                                    className="p-2 rounded-md bg-gray-100 border-darkGray block mb-2 mx-auto w-80 font-light text-gray-800" 
                                     name="email" 
                                     type="text" 
                                     onChange={handleChange} 
@@ -53,7 +53,7 @@ export default function SignIn(props) {
                                     placeholder="Email"
                                 />
                                 <input 
-                                    className="p-2 rounded-sm border-gray-800 block mb-2 mx-auto w-80 font-light" 
+                                    className="p-2 rounded-md bg-gray-100 border-darkGray block mb-2 mx-auto w-80 font-light text-gray-800" 
                                     name="password" 
                                     type="password" 
                                     onChange={handleChange} 
@@ -61,9 +61,9 @@ export default function SignIn(props) {
                                     required
                                     placeholder="Password"
                                 />
-                                <button type="submit" className="rounded-sm bg-gray-800 text-white p-2 block mx-auto w-80 font-light">
+                                <button type="submit" className="rounded-md bg-darkerGray text-white p-2 block mx-auto w-80 font-light">
                                     Login
-                                    <i aria-hidden className="fas fa-user ml-2"></i>
+                                    <i aria-hidden className="fas fa-user ml-2 text-lightBlue"></i>
                                 </button>
                             </form>
                         </div>                        

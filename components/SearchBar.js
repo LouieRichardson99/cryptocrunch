@@ -39,8 +39,8 @@ export default function SearchBar() {
     return (
         <div>
             <form onSubmit={handleCoinSearch} className="mx-auto flex justify-center mt-5">
-                <input className="p-2 rounded-sm pl-3 w-64 text-md border-none" required value={searchValue} onChange={handleCoinName} type="text" placeholder="Search for a coin, e.g. 'Bitcoin'" />
-                <button className="p-2 rounded-sm ml-1" type="submit"><i aria-hidden className="fas fa-search mr-2"></i></button>
+                <input className=" bg-darkGray p-2 rounded-sm pl-3 w-64 text-md border-none placeholder-gray-400 border text-white" required value={searchValue} onChange={handleCoinName} type="text" placeholder="Search for a coin, e.g. 'Bitcoin'" />
+                <button className="p-2 rounded-sm ml-1" type="submit"><i aria-hidden className="fas fa-search mr-2 text-lightBlue"></i></button>
             </form>
             {isOpen && <SearchResult
                 cryptoRank={coin.market_cap_rank}
@@ -54,7 +54,7 @@ export default function SearchBar() {
                 cryptoSearchID={coin.id}
                 closeResultBar={handleResultBarClose}
             />}
-            {error && <p className="text-center mt-3">There seems to have been an error.</p>}
+            {error && <p className="text-center mt-3 text-white">There seems to have been an error.</p>}
         </div>
     )
 }

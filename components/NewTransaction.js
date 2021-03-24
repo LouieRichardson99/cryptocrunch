@@ -54,13 +54,13 @@ export default function NewTransaction() {
 
     return (
         <div>
-            <p className="text-xl text-center">New Transaction<i aria-hidden className="fas fa-money-check-alt ml-3 mb-5"></i></p>
-            <form onSubmit={handleSubmit} className="sm:w-96 px-3 mx-auto">
+            <p className="text-xl text-center text-gray-100">New Transaction<i aria-hidden className="fas fa-money-check-alt ml-3 mb-5 text-lightBlue"></i></p>
+            <form onSubmit={handleSubmit} className="sm:w-96 px-3 mx-auto text-gray-100">
                 <label className="block">
                     Cryptocurrency Name
                     <input
                         value={transaction.name}
-                        className="block rounded-sm w-full mt-1" 
+                        className="block rounded-md w-full mt-2 bg-darkerGray border-none" 
                         onChange={handleChange} 
                         type="text" 
                         name="name"
@@ -72,7 +72,7 @@ export default function NewTransaction() {
                     Price Per Coin in £
                     <input
                         value={transaction.price}
-                        className="block rounded-sm w-full mt-1"
+                        className="block rounded-md w-full mt-2 bg-darkerGray border-none"
                         onChange={handleChange} 
                         type="number" 
                         name="price" 
@@ -84,7 +84,7 @@ export default function NewTransaction() {
                     Quantity
                     <input 
                         value={transaction.quantity}
-                        className="block rounded-sm w-full mt-1"
+                        className="block rounded-md w-full mt-2 bg-darkerGray border-none"
                         onChange={handleChange} 
                         type="number" 
                         name="quantity" 
@@ -93,7 +93,7 @@ export default function NewTransaction() {
                     </input>
                 </label>
                 <p className="mt-3">What type of transaction is it?</p>
-                <select className="w-full mt-2" name="type" value={transaction.type} onChange={handleChange}>
+                <select className="w-full mt-2 text-white bg-darkerGray border-none rounded-md" name="type" value={transaction.type} onChange={handleChange}>
                     <option value="buy">Buy</option>
                     <option value="sell">Sell</option>
                 </select>
@@ -101,7 +101,7 @@ export default function NewTransaction() {
                     Date
                     <input
                         value={transaction.date} 
-                        className="block rounded-sm w-full mt-1"
+                        className="block rounded-md w-full mt-2 bg-darkerGray border-none"
                         onChange={handleChange} 
                         type="date" 
                         name="date" 
@@ -109,7 +109,7 @@ export default function NewTransaction() {
                         >
                     </input>
                 </label>
-                <button className="p-2 bg-gray-800 text-white w-full mt-3" type="submit">Add Transaction</button>
+                <button className="p-2 text-darkerGray rounded-md bg-lightBlue w-full mt-3" type="submit">Add Transaction</button>
             </form>
         </div>
     )

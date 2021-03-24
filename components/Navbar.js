@@ -28,10 +28,10 @@ export default function Navbar() {
     }
 
     return (
-        <nav className="navbar navbar-expand-sm navbar-light bg-light px-2">
+        <nav className="navbar navbar-expand-sm navbar-light bg-darkGray px-8 text-white py-3 sm:py-4">
             <div className="container-fluid">
-                <a className="navbar-brand" href="/">CryptoCrunch</a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a className="navbar-brand text-white" href="/">CryptoCrunch</a>
+                <button className="navbar-toggler bg-gray-200" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse sm-navbar:justify-end" id="navbarNav">
