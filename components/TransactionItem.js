@@ -19,8 +19,11 @@ export default function TransactionItem(props) {
         }
     }
 
-    const date = format(new Date(props.txDate), 'LLLL d yyyy');
-
+    let date;
+    if (props.txDate !== 'No date') {
+        date = format(new Date(props.txDate), 'LLLL d yyyy');
+    }
+    
     return (
         <div className="flex justify-center mb-8">
             <div className="font-medium sm:w-8/12 md:w-10/12 w-11/12">

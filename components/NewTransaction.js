@@ -25,11 +25,11 @@ export default function NewTransaction() {
 
                 transactionsRef.add({
                     uid: userUID,
-                    name: transaction.name,
-                    price: transaction.price,
-                    quantity: transaction.quantity,
-                    type: transaction.type,
-                    date: transaction.date
+                    name: transaction.name || 'No name',
+                    price: transaction.price || 'No price',
+                    quantity: transaction.quantity || 'No quantity',
+                    type: transaction.type || 'No TX type',
+                    date: transaction.date || 'No date'
                 });
             } catch(error) {
                 alert(error)
