@@ -52,16 +52,6 @@ export default function NewTransaction() {
         })
     }
 
-    useEffect(() => {
-        setTransaction({
-        name: '',
-        price: '',
-        quantity: '',
-        type: 'buy',
-        date: ''
-    })
-    }, [])
-
     return (
         <div>
             <p className="text-xl text-center">New Transaction<i aria-hidden className="fas fa-money-check-alt ml-3 mb-5"></i></p>
