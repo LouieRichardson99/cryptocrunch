@@ -65,10 +65,10 @@ export default function RegisterForm(props) {
                                     Register
                                     <i aria-hidden className="fas fa-user ml-2 text-lightBlue"></i>
                                 </button>
+                                {result && <p className="text-center text-green-500 font-light mt-4 -mb-3">{result}</p>}
+                                {error && <p className="text-center text-red-500 font-light mt-4 -mb-3">{error}</p>}
                             </form>
                         </div>                        
-                        {result && <p className="text-center text-green-500 font-light">{result}</p>}
-                        {error && <p className="text-center text-red-500 font-light">{error}</p>}
                 </div>
         </div>  
     )
