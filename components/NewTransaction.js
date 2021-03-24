@@ -31,18 +31,18 @@ export default function NewTransaction() {
                     type: transaction.type,
                     date: transaction.date
                 });
-    
-                setTransaction({
-                    name: '',
-                    price: '',
-                    quantity: '',
-                    type: 'buy',
-                    date: ''
-                });
             } catch(error) {
                 alert(error)
             }
         }
+
+        setTransaction({
+            name: '',
+            price: '',
+            quantity: '',
+            type: 'buy',
+            date: ''
+        });
     }
 
     const handleChange = e => {
