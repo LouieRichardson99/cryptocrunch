@@ -16,7 +16,7 @@ export default function DemoSignIn() {
 
   return (
     <button
-      className="p-2 text-darkerGray rounded-md bg-lightBlue"
+      className="py-2 px-3 text-darkerGray rounded-md bg-lightBlue w-full sm:w-auto"
       onClick={handleSignIn}
     >
       Demo Sign In
