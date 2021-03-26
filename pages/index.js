@@ -7,6 +7,7 @@ import TransactionList from "../components/TransactionList";
 import CoinList from "../components/CoinList";
 import Navbar from "../components/Navbar";
 import NewTransaction from "../components/NewTransaction";
+import DemoSignIn from "../components/DemoSignIn";
 
 export default function Home() {
   const user = useContext(UserContext);
@@ -36,6 +37,12 @@ export default function Home() {
             Why not register? It only takes a second and you can see all the
             features this app has to offer.
           </p>
+          <p className="mt-3 text-left mb-3">
+            Or you can access the demo account!
+          </p>
+          <div className="justify-start flex">
+            <DemoSignIn />
+          </div>
         </div>
       )}
       <SearchBar />
