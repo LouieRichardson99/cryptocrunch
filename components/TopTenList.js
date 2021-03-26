@@ -1,19 +1,21 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import PriceTile from "./TopTenCoin";
 import axios from "axios";
+import { CurrencyContext } from "../context/currencyContext";
 
 export default function TopTenList() {
   const [coinData, setCoinData] = useState([]);
+  const currency = useContext(CurrencyContext);
 
   useEffect(() => {
     fetchData();
     async function fetchData() {
       const { data } = await axios.get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=10&page=1&sparkline=false"
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency[0][1]}&order=market_cap_desc&per_page=10&page=1&sparkline=false`
       );
       setCoinData(data);
     }
-  }, []);
+  }, [currency]);
 
   return (
     <div className="my-9">

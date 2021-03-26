@@ -8,6 +8,7 @@ import CoinList from "../components/CoinList";
 import Navbar from "../components/Navbar";
 import NewTransaction from "../components/NewTransaction";
 import DemoSignIn from "../components/DemoSignIn";
+import CurrencySelector from "../components/CurrencySelector";
 
 export default function Home() {
   const user = useContext(UserContext);
@@ -22,6 +23,7 @@ export default function Home() {
         />
       </Head>
       <Navbar />
+      <CurrencySelector />
       {user[0] ? null : (
         <div className="max-w-screen-sm w-10/12 text-center mx-auto my-10">
           <h2 className="mt-6 mb-3 text-xl">

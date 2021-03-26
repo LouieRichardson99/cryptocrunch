@@ -3,10 +3,12 @@ import Percentage from "../components/Percentage";
 import firebase from "../firebase/initialiseFirebase";
 import { UserContext } from "../context/userContext";
 import numeral from "numeral";
+import { CurrencyContext } from "../context/currencyContext";
 
 export default function SavedCoin(props) {
   const [isLoading, setIsLoading] = useState(false);
   const user = useContext(UserContext);
+  const currency = useContext(CurrencyContext);
 
   const db = firebase.firestore();
   const coinsRef = db.collection("coins");
@@ -44,7 +46,8 @@ export default function SavedCoin(props) {
         </div>
         <div className="sm:flex block my-auto">
           <p className="w-24 sm:w-20 text-lg sm:my-auto font-light sm:mb-0 -mb-2 sm:ml-2 justify-end flex">
-            £{numeral(props.cryptoPrice).format("0,0[.]00")}
+            {currency[0][0]}
+            {numeral(props.cryptoPrice).format("0,0[.]00")}
           </p>
           <div className="my-auto w-24 justify-end flex">
             <Percentage cryptoPercentage={props.cryptoPercentage} />
@@ -52,11 +55,13 @@ export default function SavedCoin(props) {
         </div>
         <div className="ml-3 w-24 my-auto hidden sm:block">
           <p className="font-light">
-            <span className="font-medium mr-2">MC</span>£
+            <span className="font-medium mr-2">MC</span>
+            {currency[0][0]}
             {numeral(props.cryptoMarketcap).format("0a")}
           </p>
           <p className="font-light">
-            <span className="font-medium mr-2">Vol</span>£
+            <span className="font-medium mr-2">Vol</span>
+            {currency[0][0]}
             {numeral(props.cryptoVolume).format("0a")}
           </p>
         </div>

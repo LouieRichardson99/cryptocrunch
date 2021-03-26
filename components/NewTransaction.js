@@ -1,9 +1,11 @@
-import { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
+import { CurrencyContext } from "../context/currencyContext";
 import { UserContext } from "../context/userContext";
 import firebase from "../firebase/initialiseFirebase";
 
 export default function NewTransaction() {
   const user = useContext(UserContext);
+  const currency = useContext(CurrencyContext);
 
   const db = firebase.firestore();
   const transactionsRef = db.collection("transactions");
@@ -77,7 +79,7 @@ export default function NewTransaction() {
           ></input>
         </label>
         <label className="block mt-3">
-          Price Per Coin in £
+          Price Per Coin in {currency[0][0]}
           <input
             value={transaction.price}
             className="block rounded-md w-full mt-2 bg-darkerGray border-none"

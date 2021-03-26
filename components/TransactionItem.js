@@ -3,10 +3,12 @@ import firebase from "../firebase/initialiseFirebase";
 import { UserContext } from "../context/userContext";
 import { format } from "date-fns";
 import numeral from "numeral";
+import { CurrencyContext } from "../context/currencyContext";
 
 export default function TransactionItem(props) {
   const [isLoading, setIsLoading] = useState(false);
   const user = useContext(UserContext);
+  const currency = useContext(CurrencyContext);
 
   const db = firebase.firestore();
   const transactionsRef = db.collection("transactions");
@@ -35,7 +37,8 @@ export default function TransactionItem(props) {
         <p>
           Price per coin{" "}
           <span className="font-light float-right">
-            £{numeral(props.txPrice).format("0,0[.]00")}
+            {currency[0][0]}
+            {numeral(props.txPrice).format("0,0[.]00")}
           </span>
         </p>
         <p>

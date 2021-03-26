@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import SearchResult from "./SearchResult";
+import { CurrencyContext } from "../context/currencyContext";
 
 export default function SearchBar() {
   const [coin, setCoin] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const [error, setError] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const currency = useContext(CurrencyContext);
 
   const handleResultBarClose = () => {
     setIsOpen(false);
@@ -61,12 +63,12 @@ export default function SearchBar() {
           cryptoImage={coin.image.small}
           cryptoName={coin.name}
           cryptoSymbol={coin.symbol}
-          cryptoPrice={coin.market_data.current_price.gbp}
+          cryptoPrice={coin.market_data.current_price[currency[0][1]]}
           cryptoPercentage={coin.market_data.price_change_percentage_24h.toFixed(
             2
           )}
-          cryptoMarketcap={coin.market_data.market_cap.gbp}
-          cryptoVolume={coin.market_data.total_volume.gbp}
+          cryptoMarketcap={coin.market_data.market_cap[currency[0][1]]}
+          cryptoVolume={coin.market_data.total_volume[currency[0][1]]}
           cryptoSearchID={coin.id}
           closeResultBar={handleResultBarClose}
         />

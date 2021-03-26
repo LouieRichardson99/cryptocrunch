@@ -3,11 +3,13 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/userContext";
 import firebase from "../firebase/initialiseFirebase";
 import SavedCoin from "./SavedCoin";
+import { CurrencyContext } from "../context/currencyContext";
 
 export default function CoinsList() {
   const [coins, setCoins] = useState(null);
   const [searchIDs, setSearchIDs] = useState("");
   const user = useContext(UserContext);
+  const currency = useContext(CurrencyContext);
 
   useEffect(() => {
     const db = firebase.firestore();
@@ -36,14 +38,14 @@ export default function CoinsList() {
     async function fetchData() {
       if (searchIDs.length !== 0) {
         const { data } = await axios.get(
-          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&ids=${searchIDs}&price_change_percentage=24h`
+          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency[0][1]}&ids=${searchIDs}&price_change_percentage=24h`
         );
         setCoins(data);
       } else {
         setCoins(null);
       }
     }
-  }, [searchIDs, user]);
+  }, [searchIDs, user, currency]);
 
   return (
     <div>

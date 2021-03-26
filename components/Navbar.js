@@ -51,7 +51,7 @@ export default function Navbar() {
           <div className="navbar-nav">
             {user[0] ? (
               <div>
-                <p className="text-center mt-4 sm-navbar:mt-0 sm-navbar:mb-0 mb-1">
+                <p className="text-center mt-2 sm-navbar:mt-0 sm-navbar:mb-0 mb-1">
                   Welcome, {user[0].email}!
                 </p>
                 <SignOut />
