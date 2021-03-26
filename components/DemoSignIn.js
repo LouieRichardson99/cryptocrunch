@@ -19,7 +19,7 @@ export default function DemoSignIn() {
       className="py-2 px-3 text-darkerGray rounded-md bg-lightBlue w-full sm:w-auto"
       onClick={handleSignIn}
     >
-      Demo Sign In
+      Demo Account
     </button>
   );
 }
