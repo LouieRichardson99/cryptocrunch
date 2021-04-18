@@ -2,7 +2,6 @@
 
 ![image](https://user-images.githubusercontent.com/60019261/115138341-71e40300-a023-11eb-8696-fa0ac9ad9251.png)
 
-
 CryptoCrunch is a cryptocurrency price tracker built in Next.js, Tailwindcss, Firebase, and Vercel hosting.
 It fetches it's data from the CoinGecko API which allow for up to date cryptocurrency prices.
 
